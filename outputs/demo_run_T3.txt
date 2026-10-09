@@ -1,0 +1,209 @@
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 861 entries, 0 to 860
+Data columns (total 11 columns):
+ #   Column                   Non-Null Count  Dtype 
+---  ------                   --------------  ----- 
+ 0   Name                     861 non-null    object
+ 1   API Name                 861 non-null    object
+ 2   Instance Memory          861 non-null    object
+ 3   vCPUs                    861 non-null    object
+ 4   Instance Storage         861 non-null    object
+ 5   Network Performance      861 non-null    object
+ 6   On Demand                861 non-null    object
+ 7   Linux Reserved cost      861 non-null    object
+ 8   Linux Spot Minimum cost  861 non-null    object
+ 9   Windows On Demand cost   861 non-null    object
+ 10  Windows Reserved cost    861 non-null    object
+dtypes: object(11)
+memory usage: 74.1+ KB
+Raw missing values:
+ Name                       0
+API Name                   0
+Instance Memory            0
+vCPUs                      0
+Instance Storage           0
+Network Performance        0
+On Demand                  0
+Linux Reserved cost        0
+Linux Spot Minimum cost    0
+Windows On Demand cost     0
+Windows Reserved cost      0
+dtype: int64
+        Name   API Name Instance Memory                                              vCPUs Instance Storage Network Performance       On Demand  \
+0   T4G Nano   t4g.nano         0.5 GiB  2 vCPUs                                       ...         EBS only     Up to 5 Gigabit  $0.0042 hourly   
+1   T3A Nano   t3a.nano         0.5 GiB  2 vCPUs                                       ...         EBS only     Up to 5 Gigabit  $0.0047 hourly   
+2    T3 Nano    t3.nano         0.5 GiB  2 vCPUs                                       ...         EBS only     Up to 5 Gigabit  $0.0052 hourly   
+3    T2 Nano    t2.nano         0.5 GiB  1 vCPUs                                       ...         EBS only     Low to Moderate  $0.0058 hourly   
+4  T4G Micro  t4g.micro         1.0 GiB  2 vCPUs                                       ...         EBS only     Up to 5 Gigabit  $0.0084 hourly   
+
+  Linux Reserved cost Linux Spot Minimum cost Windows On Demand cost Windows Reserved cost  
+0      $0.0026 hourly          $0.0014 hourly            unavailable           unavailable  
+1      $0.0029 hourly          $0.0014 hourly         $0.0093 hourly        $0.0075 hourly  
+2      $0.0033 hourly          $0.0007 hourly         $0.0098 hourly        $0.0079 hourly  
+3      $0.0036 hourly             unavailable         $0.0081 hourly        $0.0059 hourly  
+4      $0.0053 hourly          $0.0024 hourly            unavailable           unavailable  
+On Demand                   20
+Linux Reserved cost         24
+Linux Spot Minimum cost     39
+Windows On Demand cost     263
+Windows Reserved cost      266
+dtype: int64
+
+EC2 Cost Summary:
+        On Demand  Linux Reserved cost  Linux Spot Minimum cost  Windows On Demand cost  Windows Reserved cost
+count  841.000000           837.000000               822.000000              598.000000             595.000000
+mean     5.188935             3.200449                 0.725993                8.561024               6.297091
+std     22.728064            13.904896                 1.775821               30.135524              20.088637
+min      0.004200             0.002600                 0.000700                0.008100               0.005900
+25%      0.340000             0.215900                 0.103650                0.726900               0.588950
+50%      1.563100             0.984800                 0.372600                3.196000               2.558300
+75%      4.118000             2.635900                 0.949725                8.143250               6.371000
+max    407.680000           251.230800                45.630200              448.896000             292.446800
+
+On-Demand Pricing Outliers:
+                    Name             API Name Instance Memory      vCPUs                                Instance Storage Network Performance  On Demand  \
+775       C7A Metal-48xl       c7a.metal-48xl       384.0 GiB  192 vCPUs                                        EBS only          50 Gigabit     9.8534   
+776         C7A 48xlarge         c7a.48xlarge       384.0 GiB  192 vCPUs                                        EBS only          50 Gigabit     9.8534   
+777       X2IDN 24xlarge       x2idn.24xlarge      1536.0 GiB   96 vCPUs  2850 GB                 (2 * 1425 GB NVMe SSD)          75 Gigabit    10.0035   
+778      X2IEZN 12xlarge      x2iezn.12xlarge      1536.0 GiB   48 vCPUs                                        EBS only         100 Gigabit    10.0080   
+779         X2IEZN Metal         x2iezn.metal      1536.0 GiB   48 vCPUs                                        EBS only         100 Gigabit    10.0080   
+..                   ...                  ...             ...        ...                                             ...                 ...        ...   
+836    U-18TB1 112xlarge    u-18tb1.112xlarge     18432.0 GiB  448 vCPUs                                        EBS only         100 Gigabit   163.8000   
+837  U7IN-16TB 224xlarge  u7in-16tb.224xlarge     16384.0 GiB  896 vCPUs                                        EBS only         200 Gigabit   203.8400   
+838    U-24TB1 112xlarge    u-24tb1.112xlarge     24576.0 GiB  448 vCPUs                                        EBS only         100 Gigabit   218.4000   
+839  U7IN-24TB 224xlarge  u7in-24tb.224xlarge     24576.0 GiB  896 vCPUs                                        EBS only         200 Gigabit   305.7600   
+840  U7IN-32TB 224xlarge  u7in-32tb.224xlarge     32768.0 GiB  896 vCPUs                                        EBS only         200 Gigabit   407.6800   
+
+     Linux Reserved cost  Linux Spot Minimum cost  Windows On Demand cost  Windows Reserved cost  
+775               6.5180                   1.4675                 18.6854                15.3500  
+776               6.5180                   2.7641                 18.6854                15.3500  
+777               6.1551                   1.1498                 14.4195                10.5711  
+778               6.1614                   3.0475                 12.2160                 8.3694  
+779               6.1614                   1.8874                 12.2160                 8.3694  
+..                   ...                      ...                     ...                    ...  
+836             100.9409                      NaN                184.4080               121.5489  
+837             125.6154                      NaN                245.0560               166.8314  
+838             134.5879                      NaN                239.0080               155.1959  
+839             188.4231                      NaN                346.9760               229.6391  
+840             251.2308                      NaN                448.8960               292.4468  
+
+[66 rows x 11 columns]
+
+Total outliers: 66
+
+10 Lowest-Cost EC2 Instances:
+        Name  On Demand  Linux Reserved cost
+0   T4G Nano     0.0042               0.0026
+1   T3A Nano     0.0047               0.0029
+2    T3 Nano     0.0052               0.0033
+3    T2 Nano     0.0058               0.0036
+4  T4G Micro     0.0084               0.0053
+5  T3A Micro     0.0094               0.0059
+6   T3 Micro     0.0104               0.0065
+7   T2 Micro     0.0116               0.0072
+8  T4G Small     0.0168               0.0105
+9  T3A Small     0.0188               0.0118
+
+T2 Instance Costs Summary:
+       On Demand  Linux Reserved cost  Linux Spot Minimum cost  Windows On Demand cost  Windows Reserved cost
+count    7.00000             7.000000                 6.000000                7.000000               7.000000
+mean     0.10520             0.065200                 0.026233                0.128757               0.088786
+std      0.13306             0.082432                 0.023299                0.154409               0.103796
+min      0.00580             0.003600                 0.001900                0.008100               0.005900
+25%      0.01730             0.010800                 0.008500                0.024100               0.017700
+50%      0.04640             0.028700                 0.019950                0.064400               0.046700
+75%      0.13920             0.086250                 0.046700                0.173700               0.120750
+max      0.37120             0.230000                 0.055300                0.433200               0.292000
+
+T3 Instance Costs Summary:
+       On Demand  Linux Reserved cost  Linux Spot Minimum cost  Windows On Demand cost  Windows Reserved cost
+count  14.000000            14.000000                14.000000               14.000000              14.000000
+mean    0.089807             0.056300                 0.026436                0.132521               0.099014
+std     0.109328             0.068537                 0.032506                0.158461               0.117710
+min     0.004700             0.002900                 0.000700                0.009300               0.007500
+25%     0.012500             0.007825                 0.003875                0.024000               0.019325
+50%     0.039600             0.024850                 0.012150                0.058000               0.043250
+75%     0.133600             0.083775                 0.033175                0.195700               0.145875
+max     0.332800             0.208600                 0.100900                0.480000               0.355800
+
+10 Lowest-Cost T2 and T3 Instances:
+          Name  On Demand  Linux Reserved cost
+1     T3A Nano     0.0047               0.0029
+2      T3 Nano     0.0052               0.0033
+3      T2 Nano     0.0058               0.0036
+5    T3A Micro     0.0094               0.0059
+6     T3 Micro     0.0104               0.0065
+7     T2 Micro     0.0116               0.0072
+9    T3A Small     0.0188               0.0118
+11    T3 Small     0.0208               0.0130
+12    T2 Small     0.0230               0.0144
+17  T3A Medium     0.0376               0.0236
+
+Missing values after regression row filtering:
+ Name                         0
+API Name                     0
+Instance Memory              0
+vCPUs                        0
+Instance Storage             0
+Network Performance          0
+On Demand                    0
+Linux Reserved cost          4
+Linux Spot Minimum cost     19
+Windows On Demand cost     243
+Windows Reserved cost      246
+dtype: int64
+
+Regression Dataset:
+   Instance Memory  vCPUs  On Demand
+0              0.5      2     0.0042
+1              0.5      2     0.0047
+2              0.5      2     0.0052
+3              0.5      1     0.0058
+4              1.0      2     0.0084
+
+Total usable instances: 841
+
+Training samples: 672
+Testing samples: 169
+
+Model Intercept: -0.482966595443334
+Model Coefficients: [0.01002807 0.02175741]
+
+Regression Model Evaluation:
+Mean Absolute Error (MAE): 1.8132850149757644
+Mean Squared Error (MSE): 26.939493665051373
+Root Mean Squared Error (RMSE): 5.190326932385991
+
+Predicted On-Demand Cost for 4 GiB, 2 vCPUs: $-0.3993
+A negative predicted price is a limitation of this linear model, not a valid hourly price.
+Saved the four assignment figures to /Users/ayatal-azzawi/Desktop/AWS-Local-Lab/ec2-cost-analysis/outputs
+
+Available instance-family filters: A1, C1, C3, C4, C5, C6, C7, C8, D2, D3, DL1, F1, G2, G3, G4, G5, G6, Gr6, H1, HPC6, HPC7, I2, I3, I4, IM4, INF1, INF2, IS4, M1, M2, M3, M4, M5, M6, M7, M8, MAC1, MAC2, P2, P3, P4, P5, R3, R4, R5, R6, R7, R8, T1, T2, T3, T4, TRN1, U7, VT1, X1, X2, X8, Z1
+Choose a family (for example T2, T3, or M5; Enter to skip): 
+T3 Family Cost Summary:
+       On Demand  Linux Reserved cost  Linux Spot Minimum cost  Windows On Demand cost  Windows Reserved cost
+count  14.000000            14.000000                14.000000               14.000000              14.000000
+mean    0.089807             0.056300                 0.026436                0.132521               0.099014
+std     0.109328             0.068537                 0.032506                0.158461               0.117710
+min     0.004700             0.002900                 0.000700                0.009300               0.007500
+25%     0.012500             0.007825                 0.003875                0.024000               0.019325
+50%     0.039600             0.024850                 0.012150                0.058000               0.043250
+75%     0.133600             0.083775                 0.033175                0.195700               0.145875
+max     0.332800             0.208600                 0.100900                0.480000               0.355800
+
+T3 Instances (sorted by On-Demand price):
+                  Name    API Name  On Demand  Linux Reserved cost
+              T3A Nano    t3a.nano     0.0047               0.0029
+               T3 Nano     t3.nano     0.0052               0.0033
+             T3A Micro   t3a.micro     0.0094               0.0059
+              T3 Micro    t3.micro     0.0104               0.0065
+             T3A Small   t3a.small     0.0188               0.0118
+              T3 Small    t3.small     0.0208               0.0130
+            T3A Medium  t3a.medium     0.0376               0.0236
+             T3 Medium   t3.medium     0.0416               0.0261
+             T3A Large   t3a.large     0.0752               0.0471
+              T3 Large    t3.large     0.0832               0.0522
+       T3A Extra Large  t3a.xlarge     0.1504               0.0943
+        T3 Extra Large   t3.xlarge     0.1664               0.1043
+T3A Double Extra Large t3a.2xlarge     0.3008               0.1886
+ T3 Double Extra Large  t3.2xlarge     0.3328               0.2086
